@@ -60,6 +60,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Send message data.
     # Fill in start
     messagedata = 'message data\r\n'
+    #messagedata = 'message data'
     # to test command
     # print(messagedata)
     clientSocket.send(messagedata)
