@@ -19,8 +19,8 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # mailserver ='127.0.0.1'
 
     clientSocket = socket(AF_INET, SOCK_STREAM)
-    clientSocket.connect(mailserver)
-    # clientSocket.connect((mailserver, port))
+    #clientSocket.connect(mailserver)
+    clientSocket.connect((mailserver, port))
     # clientSocket.connect((port, mailserver))
     # clientSocket.listen(1)
     # clientSocket.accept()
@@ -67,7 +67,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send DATA command and print server response.
     # Fill in start
-    dataCommand = 'data\r\n'
+    dataCommand = 'data'
     # to test command
     # print(dataCommand)
     clientSocket.send(dataCommand.encode())
@@ -79,7 +79,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send message data.
     # Fill in start
-    messagedata = 'message data\r\n'
+    messagedata = 'message data'
     # to test command
     # print(messagedata)
     clientSocket.send(messagedata.encode())
